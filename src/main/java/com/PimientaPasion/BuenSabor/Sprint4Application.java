@@ -89,7 +89,7 @@ public class Sprint4Application {
 
             Usuario usuario3 = Usuario.builder()
                     //.auth0Id("3")
-                    .username("joaquine@gmail.com")
+                    .username("admin")
                     .password("$2a$10$fcQbrK9cNIjQPEFkKxwZLOOGc3q.3OaZttY6JCenHlSY/0x58sH3i")
                     .rol(Rol.ADMINISTRADOR)
                     .build();

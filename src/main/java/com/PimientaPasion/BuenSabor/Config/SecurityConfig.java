@@ -46,15 +46,19 @@ public class SecurityConfig {
 
                                 .requestMatchers(new AntPathRequestMatcher("/api/v1/clientes/modificarCliente")).hasAnyAuthority("CLIENTE")
 
-                                .requestMatchers(new AntPathRequestMatcher("/api/v1/empleados/modificarEmpleado")).hasAnyAuthority("DELIVERY","CAJERO","COCINERO")
+                                .requestMatchers(new AntPathRequestMatcher("/api/v1/empleados/modificarEmpleado")).hasAnyAuthority("ADMINISTRADOR")
 
+                                .requestMatchers(new AntPathRequestMatcher("/api/v1/empleados/modificarEmpleado")).permitAll()
                                 .requestMatchers(new AntPathRequestMatcher("/api/v1/empleados/**")).permitAll()
+                                .requestMatchers(new AntPathRequestMatcher("/api/v1/empleados")).hasAnyAuthority("ADMINISTRADOR")
+
 
                                 .requestMatchers(new AntPathRequestMatcher("/api/v1/productos/**")).permitAll()
 
                                 .requestMatchers(new AntPathRequestMatcher("/api/v1/clientes/**")).permitAll()
 
                                 .requestMatchers(new AntPathRequestMatcher("/api/v1/domicilios/**")).hasAnyAuthority("ADMINISTRADOR")
+
 
                                 .requestMatchers(new AntPathRequestMatcher("/api/v1/clientes/**")).hasAnyAuthority("ADMINISTRADOR")
 
